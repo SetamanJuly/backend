@@ -2,6 +2,7 @@ package io.paketo.demo.utils
 
 import io.paketo.demo.model.flights.BoundModel
 import io.paketo.demo.model.flights.ResultsModel
+import io.paketo.demo.utils.data.conversionRates
 import io.paketo.demo.utils.data.generateRandomDate
 import io.paketo.demo.utils.data.generateRandomHour
 import io.paketo.demo.utils.data.listOfDestination
@@ -21,7 +22,7 @@ fun generateRandomFlights(numberFlights: Int): List<ResultsModel> {
           inbound = it.first,
           outbound = it.second,
           price = (100..1000).random().toDouble(),
-          currency = "EUR",
+          currency = conversionRates.keys.random(),
         )
       )
     }
