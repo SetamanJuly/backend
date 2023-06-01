@@ -1,7 +1,11 @@
 package io.paketo.demo.utils
 
-import io.paketo.demo.model.BoundModel
-import io.paketo.demo.model.ResultsModel
+import io.paketo.demo.model.flights.BoundModel
+import io.paketo.demo.model.flights.ResultsModel
+import io.paketo.demo.utils.data.generateRandomDate
+import io.paketo.demo.utils.data.generateRandomHour
+import io.paketo.demo.utils.data.listOfDestination
+import io.paketo.demo.utils.data.listOfDragons
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -39,9 +43,9 @@ fun obtainRandomBound() : Pair<BoundModel, BoundModel>{
   val inbound = BoundModel (
     airline = generateAirlineInBound.key,
     airlineImage = generateAirlineInBound.value,
-    arrivalDate = generateInboundDates.formatDate(),
+    arrivalDate = generateInboundDates.addRandomDays().formatDate(),
     arrivalTime = generateRandomHour(),
-    departureDate = generateInboundDates.addRandomDays().formatDate(),
+    departureDate = generateInboundDates.formatDate(),
     departureTime = generateRandomHour(),
     destination = generateDestination,
     origin = generateOrigin,
@@ -50,9 +54,9 @@ fun obtainRandomBound() : Pair<BoundModel, BoundModel>{
   val outbound = BoundModel (
     airline = generateAirlineOutBound.key,
     airlineImage = generateAirlineOutBound.value,
-    arrivalDate = generateOutboundDates.formatDate(),
+    arrivalDate = generateOutboundDates.addRandomDays().formatDate(),
     arrivalTime = generateRandomHour(),
-    departureDate = generateOutboundDates.addRandomDays().formatDate(),
+    departureDate = generateOutboundDates.formatDate(),
     departureTime = generateRandomHour(),
     destination = generateOrigin,
     origin = generateDestination,

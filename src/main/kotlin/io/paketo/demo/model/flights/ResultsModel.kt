@@ -1,4 +1,4 @@
-package io.paketo.demo.model
+package io.paketo.demo.model.flights
 
 data class ResultsModel(
   val inbound: BoundModel,
