@@ -26,6 +26,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+	implementation("commons-fileupload:commons-fileupload:1.4")
 	testImplementation("io.projectreactor:reactor-test")
 }
 
